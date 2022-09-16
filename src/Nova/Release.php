@@ -3,6 +3,7 @@
 namespace Armincms\MobileApp\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -62,6 +63,8 @@ class Release extends Resource
                 ->from('name')
                 ->hideFromIndex()
                 ->rules('unique:mobile_app_releases,slug,{{resourceId}}'),
+
+            Boolean::make(__('Force to update'), 'force')->required()->default(true),
 
             $this->resourceUrls(),
 
