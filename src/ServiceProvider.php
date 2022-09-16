@@ -4,6 +4,7 @@ namespace Armincms\MobileApp;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 use Laravel\Nova\Nova as LaravelNova;
+use Zareismail\Cypress\Cypress;
 use Zareismail\Gutenberg\Gutenberg;
 
 class ServiceProvider extends AuthServiceProvider
@@ -61,7 +62,9 @@ class ServiceProvider extends AuthServiceProvider
      */
     protected function widgets()
     {
-        Gutenberg::widgets([]);
+        Gutenberg::widgets([
+            \Armincms\MobileApp\Cypress\widgets\ReleasesCard::class,
+        ]);
     }
 
     /**
@@ -71,6 +74,8 @@ class ServiceProvider extends AuthServiceProvider
      */
     protected function templates()
     {
-        Gutenberg::templates([]);
+        Gutenberg::templates([
+            \Armincms\MobileApp\Gutenberg\Templates\ReleasesCard::class,
+        ]);
     }
 }
