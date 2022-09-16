@@ -63,7 +63,7 @@ class ServiceProvider extends AuthServiceProvider
     protected function widgets()
     {
         Gutenberg::widgets([
-            \Armincms\MobileApp\Cypress\widgets\ReleasesCard::class,
+            \Armincms\MobileApp\Cypress\Widgets\ReleasesCard::class,
         ]);
     }
 
