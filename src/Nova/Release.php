@@ -42,11 +42,19 @@ class Release extends Resource
                 ->rules('required')
                 ->help(__('Example: First release')),
 
+            Text::make(__('Package Name'), 'package')
+                ->sortable()
+                ->help(__('Example: myapp')),
+
             Text::make(__('Release Version'), 'version')
                 ->sortable()
                 ->required()
                 ->rules('required')
                 ->help('Example: v1.0.0'),
+
+            Text::make(__('Version Number'), 'number')
+                ->sortable()
+                ->help('Example: 12'),
 
             Slug::make(__('Release Slug'), 'slug')
                 ->sortable()

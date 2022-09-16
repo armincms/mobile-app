@@ -16,6 +16,9 @@ class CreateMobileAppReleasesTable extends Migration
         Schema::create('mobile_app_releases', function (Blueprint $table) {
             $table->id();
             $table->string('version', 20);
+            $table->string('package', 20)->nullable();
+            $table->integer('number')->nullable();
+            $table->boolean('force')->default(false);
             $table->content();
             $table->resourceHits();
             $table->softDeletes();
