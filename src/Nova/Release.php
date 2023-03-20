@@ -71,13 +71,11 @@ class Release extends Resource
 
             $this->medialibrary(__('Release APK'), 'apk')
                 ->sortable()
-                ->required()
-                ->rules('required'),
+                ->required(),
 
             $this->medialibrary(__('Release Zip'), 'zip')
                 ->sortable()
-                ->required()
-                ->rules('required'),
+                ->required(),
 
             Textarea::make(__('Release Summary'), 'summary')->hideFromIndex()->nullable(),
 

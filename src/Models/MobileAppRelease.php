@@ -80,7 +80,7 @@ class MobileAppRelease extends Model implements HasMedia, Hitsable, Authenticata
 
     /**
      * Get the available media collections.
-     * 
+     *
      * @return array
      */
     public function getMediaCollections(): array
@@ -98,7 +98,7 @@ class MobileAppRelease extends Model implements HasMedia, Hitsable, Authenticata
                 'multiple'  => false,
                 'disk'      => 'file',
                 'limit'     => 1, // count of files
-                'accepts'   => ['application/vnd.android.package-archive', 'application/java-archive',],
+                'accepts'   => ['application/vnd.android.package-archive', 'application/java-archive', 'application/zip'],
             ],
         ];
     }
